@@ -23,6 +23,7 @@ RUN sed -i '/<policy domain="path" rights="none" pattern="@\*"/d' /etc/ImageMagi
 COPY requirements.txt ./
 
 # Install Python dependencies
+RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Now copy the rest of the codebase into the image
